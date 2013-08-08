@@ -1,0 +1,4 @@
+mutex1: mutex1.o
+	g++ -pthread -o mutex1 mutex1.o   
+mutex1.o: mutex1.c
+	g++ -pthread -c mutex1.c

@@ -1,0 +1,1 @@
+cmd_/home/Wing/Dropbox/my_codes/Kernel/proc_fs/procfs3.ko := ld -r -m elf_x86_64 -T /usr/src/linux-3.9.4/scripts/module-common.lds --build-id  -o /home/Wing/Dropbox/my_codes/Kernel/proc_fs/procfs3.ko /home/Wing/Dropbox/my_codes/Kernel/proc_fs/procfs3.o /home/Wing/Dropbox/my_codes/Kernel/proc_fs/procfs3.mod.o

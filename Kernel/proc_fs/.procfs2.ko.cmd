@@ -1,0 +1,1 @@
+cmd_/home/wing/Dropbox/my_codes/Kernel/proc_fs/procfs2.ko := ld -r -m elf_i386 -T /usr/src/kernels/3.6.11-4.fc16.i686/scripts/module-common.lds --build-id  -o /home/wing/Dropbox/my_codes/Kernel/proc_fs/procfs2.ko /home/wing/Dropbox/my_codes/Kernel/proc_fs/procfs2.o /home/wing/Dropbox/my_codes/Kernel/proc_fs/procfs2.mod.o
