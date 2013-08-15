@@ -24,42 +24,43 @@ bool isLeapYear(int year){
     else return false;
 }
 
-int getDayFromOrigin(string date){
+__int64_t getDayFromOrigin(string date){
     
     int year = atoi(date.substr(0,4).c_str());
     int month = atoi(date.substr(5,2).c_str());
     int day = atoi(date.substr(8,2).c_str());
 
-    int ret=0;
-    int r0=year-1900;
+    __int64_t ret=0;
+    int r0=year;
     int q1=r0/400, r1=r0%400;
-    ret+=q1*daysPerFourHundredYears;
+    ret+=(__int64_t)q1*daysPerFourHundredYears;
     int q2=r1/100, r2=r1%100;
-    ret+=q2*daysPerHundredYears;
+    ret+=(__int64_t)q2*daysPerHundredYears;
     int q3=r2/4, r3=r2%4;
-    ret+=q3*daysPerFourYears+r3*daysPerYear;
+    ret+=(__int64_t)q3*daysPerFourYears+(__int64_t)r3*daysPerYear;
     
     for(int i=1;i<month;++i){
         if(i==1||i==3||i==5||i==7||i==8||i==10||i==12){
-            ret+=31;
+            ret+=(__int64_t)31;
         }
         else if(i==4||i==6||i==9||i==11){
-            ret+=30;
+            ret+=(__int64_t)30;
         }
         else{ // i==2
             if(isLeapYear(year)) {ret+=29.0;}
-            else {ret+=28;}
+            else {ret+=(__int64_t)28;}
         }
     }
-    ret+=day;
+    ret+=(__int64_t)(day-1);
     return ret;
 }
 
 int main(int argc, const char * argv[])
 {
-    string date="2000-08-15";
-    int ans=getDayFromOrigin(date);
-    printf("date difference from %s to 1900-01-01 is %d day(s)\n", date.c_str(),ans);
+    string date1="2005-03-01";
+    string date2="1900-01-01";
+    __int64_t ans=getDayFromOrigin(date1)-getDayFromOrigin(date2);
+    printf("date difference from %s to %s is %lld day(s)\n", date1.c_str(), date2.c_str(),ans);
     return 0;
 }
 
