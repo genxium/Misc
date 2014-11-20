@@ -1,4 +1,0 @@
-join1: join1.o
-	g++ -pthread -o join1 join1.o   
-join1.o: join1.c
-	g++ -pthread -c join1.c

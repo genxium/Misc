@@ -1,4 +1,0 @@
-pthread1: pthread1.o
-	g++ -pthread -o pthread1 pthread1.o   
-pthread1.o: pthread1.c
-	g++ -pthread -c pthread1.c
